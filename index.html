@@ -244,10 +244,10 @@
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 32 101,000 USDT</span>
+                <span class="balance">Solde: 6 500 000 F CFA</span>
                 <div class="account-info">
-                    <span>ANTSOLU MAGLOIRE</span><br>
-                    <span>077147833</span>
+                    <span>GNANGNE ERNESTINE</span><br>
+                    <span>0707586450</span>
                 </div>
                 <button>Déconnexion</button>
             </div>
@@ -274,14 +274,14 @@
                 </div>
             </div>
             <div class="withdrawal-options">
-                <button id="airtel-money">Retrait via Airtel Money</button>
-                <button id="moov-money">Retrait via Moov Money</button>
+                <button id="wave">Retrait via Wave</button>
             </div>
             <div class="withdrawal-form" id="withdrawal-form">
                 <h3>Confirmer le retrait</h3>
                 <div class="info">
-                    <p>Nom: ANTSOLU MAGLOIRE</p>
-                    <p>Numéro: 24177147833</p>
+                    <p>Nom: GNANGNE ERNESTINE</p>
+                    <p>Numéro: 0707586450</p>
+                    <p>Montant: 6 500 000 F CFA</p>
                 </div>
                 <button id="confirm-withdrawal">Valider le Retrait</button>
             </div>
@@ -308,12 +308,7 @@
 
             setInterval(updatePrice, 5000);
 
-            document.getElementById('airtel-money').addEventListener('click', () => {
-                withdrawalForm.style.display = 'flex';
-                errorMessage.textContent = '';
-            });
-
-            document.getElementById('moov-money').addEventListener('click', () => {
+            document.getElementById('wave').addEventListener('click', () => {
                 withdrawalForm.style.display = 'flex';
                 errorMessage.textContent = '';
             });
