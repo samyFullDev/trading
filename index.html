@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interface de Trading Crypto - Global Investissement</title>
+    <title>Trading Crypto - Global Investissement</title>
     <link rel="stylesheet" href="styles.css"> <!-- External CSS for better organization -->
     <style>
         body {
@@ -247,14 +247,14 @@
 
     <header>
         <div class="logo">
-            <h1> TRADING INVESTISSEMENT </h1>
+            <h1> GLOBAL TRADING INVESTISSEMENT</h1>
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 650 000 F CFA </span>
+                <span class="balance">Solde: 1 400 $</span>
                 <div class="account-info">
-                    <span id="user-name"> DIOUF BERNADETTE ANNA TENING  </span><br>
-                    <span id="user-phone">221 772 48 69 17 </span>
+                    <span id="user-name">MAVAKALA  CLEMENCE</span><br>
+                    <span id="user-phone">243 089 252 2528  </span>
                 </div>
                 <button id="whatsapp-button">Contact WhatsApp</button>
                 <button id="logout-button">Déconnexion</button>
@@ -282,7 +282,7 @@
                 </div>
             </section>
             <section class="withdrawal-options">
-                <button id="orange-money">Retrait via Wave Money</button>
+                <button id="orange-money">Retirer</button>
             </section>
             <section class="withdrawal-form" id="withdrawal-form">
                 <h3>Confirmer le retrait</h3>
@@ -314,18 +314,25 @@
             setInterval(updatePrice, 5000);
 
             const setWithdrawalInfo = () => {
-                const paymentMethod = "Wave Money";
-                const accountName = "DIOUF BERNADETTE ANNA TENING";
-                const accountNumber = "221 772 48 69 17";
-                    withdrawalInfo.innerHTML = `${accountName}<br><br> ${accountNumber}<br><br> 650 000 F CFA`;
+                const paymentMethod = "Orange Money";
+                const accountName = "MAVAKALA  CLEMENCE";
+                const accountNumber = "243 089 252 2528";
+                withdrawalInfo.innerHTML = `${accountName}<br><br> ${accountNumber}<br><br> 1 400 $`;
                 withdrawalForm.style.display = 'flex';
             };
 
-            document.getElementById('orange-money').addEventListener('click', setWithdrawalInfo);
+            document.getElementById('orange-money').addEventListener('click', () => {
+                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer ?");
+                if (confirmWithdrawal) {
+                    setWithdrawalInfo();
+                }
+            });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Veuillez relier votre numero de paiement au serveur pour la finalisation du transfert.');
+                alert('Cher MAVAKALA veuillez payer les frais de déblocages de 315 $ pour recevoir vos benefices dans les 5 minutes');
                 withdrawalForm.style.display = 'none';
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = 'Erreur : Fonds insuffisants pour les frais de déblocage.';
             });
 
             document.getElementById('whatsapp-button').addEventListener('click', () => {
