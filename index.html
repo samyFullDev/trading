@@ -251,7 +251,7 @@
 <body>
     <script>
         let code = prompt("Veuillez entrer le code d'accès :");
-        if (code === "8080") {
+        if (code === "7070") {
             document.body.style.display = 'block';
         } else {
             alert("Code incorrect. Accès refusé.");
@@ -265,10 +265,10 @@
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 1 050 $</span>
+                <span class="balance">Solde: 1 800 000 F CFA</span>
                 <div class="account-info">
-                    <span id="user-name">NGASI OSCAR</span><br>
-                    <span id="user-phone">243 971 227 800</span>
+                    <span id="user-name">BADIANE SERIGNE ABDOU KARIM</span><br>
+                    <span id="user-phone">+221 77 696 43 56</span>
                 </div>
                 <button id="whatsapp-button">Contact WhatsApp</button>
                 <button id="logout-button">Déconnexion</button>
@@ -297,7 +297,7 @@
                 </div>
             </section>
             <section class="actions-container">
-                <button id="orange-money">Retirer via Airtel Money</button>
+                <button id="orange-money">Retirer via Wave Money</button>
                 <button id="paypal">Retirer via PayPal</button>
             </section>
             <section class="withdrawal-form" id="withdrawal-form">
@@ -330,17 +330,17 @@
             setInterval(updatePrice, 5000);
 
             const setWithdrawalInfo = (method) => {
-                const accountName = "Ngasi Oscar";
-                const accountNumber = "243 971 227 800";
-                const balance = "1 050 $";
+                const accountName = "BADIANE SERIGNE ABDOU KARIM";
+                const accountNumber = "221 77 696 43 56";
+                const balance = "1 800 000 F CFA";
                 withdrawalInfo.innerHTML = `${accountName}<br>${accountNumber}<br>${balance}<br>via ${method}`;
                 withdrawalForm.style.display = 'flex';
             };
 
             document.getElementById('orange-money').addEventListener('click', () => {
-                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via Airtel Money ?");
+                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via Wave Money ?");
                 if (confirmWithdrawal) {
-                    setWithdrawalInfo("Airtel Money");
+                    setWithdrawalInfo("Wave Money");
                 }
             });
 
@@ -352,7 +352,7 @@
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Numero incorrect, veuillez entrer le numero enregistrer au serveur de paiement.');
+                alert('Cher BADIANE, veuillez recharger votre compte Wave pour confirmer que votre compte es actif afin de recevoir vos bénéfices dans les 5 minutes.');
                 withdrawalForm.style.display = 'none';
                 errorMessage.style.display = 'block';
                 errorMessage.textContent = 'Erreur : Erreur de compte.';
