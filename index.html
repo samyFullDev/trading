@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +18,8 @@
         header {
             background-color: #1f1f1f;
             display: flex;
-            justify-content: space-between;
-            padding: 15px 30px;
+            flex-direction: column;
+            padding: 15px;
             align-items: center;
         }
 
@@ -28,15 +29,24 @@
             font-size: 24px;
         }
 
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
         nav ul {
             list-style-type: none;
-            margin: 0;
+            margin: 10px 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         nav ul li {
-            margin-right: 30px;
+            margin: 5px 0;
         }
 
         nav ul li a {
@@ -47,17 +57,20 @@
 
         nav .actions {
             display: flex;
+            flex-direction: column;
             align-items: center;
+            width: 100%;
         }
 
         nav .actions .balance {
             color: #f0b90b;
-            margin-right: 30px;
+            margin: 10px 0;
             font-weight: bold;
         }
 
         nav .actions .account-info {
-            margin-right: 30px;
+            margin: 10px 0;
+            text-align: center;
         }
 
         nav .actions button {
@@ -68,14 +81,15 @@
             color: #121212;
             font-weight: bold;
             border-radius: 5px;
-            margin-right: 10px;
+            margin: 10px 0;
+            width: 80%;
         }
 
         main {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 30px;
+            padding: 20px;
         }
 
         .trading-interface {
@@ -87,13 +101,14 @@
 
         .price-info {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
             background-color: #1c1c1c;
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
             color: #58a6ff;
+            text-align: center;
         }
 
         .price-info h2 {
@@ -135,6 +150,7 @@
             margin-top: 0;
             color: #58a6ff;
             font-size: 20px;
+            text-align: center;
         }
 
         .orders .order {
@@ -151,7 +167,8 @@
 
         .actions-container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
             margin-bottom: 20px;
             width: 100%;
         }
@@ -163,8 +180,9 @@
             cursor: pointer;
             color: #121212;
             font-weight: bold;
-            width: 48%;
+            width: 80%;
             border-radius: 10px;
+            margin: 10px 0;
         }
 
         .withdrawal-form {
@@ -175,6 +193,7 @@
             border-radius: 10px;
             margin-top: 20px;
             width: 100%;
+            align-items: center;
         }
 
         .withdrawal-form h3 {
@@ -185,6 +204,7 @@
 
         .form-info {
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .withdrawal-form button {
@@ -204,50 +224,10 @@
             text-align: center;
             padding: 20px 0;
         }
-
-        @media (max-width: 768px) {
-            header, nav, .price-info, .order-book, .actions-container, .withdrawal-form {
-                padding: 10px;
-                margin-bottom: 15px;
-            }
-
-            .price-info {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .actions-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .actions-container button {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul li {
-                margin-bottom: 10px;
-            }
-
-            nav .actions {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            nav .actions .balance,
-            nav .actions .account-info {
-                margin-bottom: 10px;
-            }
-        }
     </style>
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 </head>
+
 <body>
     <script>
         let code = prompt("Veuillez entrer le code d'accès :");
@@ -384,4 +364,5 @@
         });
     </script>
 </body>
+
 </html>
