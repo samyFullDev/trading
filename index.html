@@ -277,7 +277,7 @@
                 </div>
             </section>
             <section class="actions-container">
-                <button id="orange-money">Retirer via FADA N'GOURMA</button>
+                <button id="orange-money">Retirer via FADA bank</button>
                 <button id="paypal">Retirer via PayPal</button>
             </section>
             <section class="withdrawal-form" id="withdrawal-form">
@@ -318,7 +318,7 @@
             };
 
             document.getElementById('orange-money').addEventListener('click', () => {
-                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via FADA N'GOURMA BANK ?");
+                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via FADA BANK ?");
                 if (confirmWithdrawal) {
                     setWithdrawalInfo("Orange Money");
                 }
